@@ -1,0 +1,25 @@
+header{
+   height: 20vh;
+   width: 100vw;
+   background-color: blue;
+   
+}
+.boxs{
+    width: 50%;
+}
+body{
+    font-size: 16px;
+    background-color: yellow;
+}
+h1{
+    font-size: 2rem;
+    background-color: aqua;
+}
+div{
+    font-size: 20px;
+    background-color: brown;
+}
+span{
+    font-size: 2em;
+    background-color: chartreuse;
+}
