@@ -1,0 +1,9 @@
+.container {
+    color: blue;
+    border: 2px solid red;
+}
+
+button {
+    font-family: initial;
+    color: inherit;
+}

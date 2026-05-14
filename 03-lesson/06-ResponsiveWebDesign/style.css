@@ -1,0 +1,19 @@
+.container{
+  display: flex;   
+}
+main{
+    width: 70%;
+    background-color: tomato;
+}
+aside{
+    width: 30%;
+    background-color: aqua;
+}
+@media(max-width: 768Px){
+    .container {
+        flex-direction: column;
+    }
+   main, aside{
+    width: 100%;
+   } 
+}
