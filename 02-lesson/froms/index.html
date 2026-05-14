@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="background-color: green;">Regisrer new user</h1>
+    <h2 id="stronger" class="weaker">בדיקת ספציפיות</h2>
+    <p>הצבע ירוק גובר מאחר שהוא בתוך האלמנט
+        אחר כך האקווה מאחר והוא בתוך הקובץ
+        ורק בסוף החום שהוא חיצוני </p>
+    <form action="https://formspree.io/f/mwvabajl" method="post">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" placeholder="enter your name">
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="Age" placeholder="enter your age" min="0">
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="newsletter" name="Newsletter" value="yes">
+            <label for="newsletter" style="display: inline-block;">Sign up for newsletter</label>
+        </div>
+        <div class="form-group">
+            <label>Preferred contact method:</label>
+            <input type="radio" id="contact-email" name="ContactMethod" value="Email">
+            <label for="contact-email" style="display: inline-block;">Email</label>
+
+            <input type="radio" id="contact-phone" name="ContactMethod" value="Phone">
+            <label for="contact-phone" style="display: inline-block;">Phone</label>
+        </div>
+        <div class="form-group">
+            <label for="subject">Subject of inquiry:</label>
+            <select id="subject" name="Subject">
+                <option value="general">General</option>
+                <option value="support">Support</option>
+                <option value="sales">Sale</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" placeholder="enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="psw">Password</label>
+            <input type="password" id="psw" placeholder="enter your password" required>
+        </div>
+        <div class="form-group">
+            <label for="mobile">mobile</label>
+            <input type="tel" id="mobile" name="Mobile" pattern="[0-9]{3}-[0-9]{7}" placeholder="enter your mobile">
+        </div>
+        <div class="form-group">
+            <label for="birthdate">Data of Birth</label>
+            <input type="date" id="birthdate" name="birthdate">
+        </div>
+        <div class="form-group">
+            <label for="note">Note</label>
+            <textarea name="Note" id="note" rows="8"> </textarea>
+        </div>
+        <div class="form-group">
+
+            <button type="submit">Send</button>
+            <button type="reset">Clear</button>
+        </div>
+    </form>
+</body>
+
+</html>
