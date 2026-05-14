@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .product{
+            background-color: aquamarine;
+            flex-basis: 250px;
+                flex-grow: 1; 
+            flex-shrink: 1;
+
+        }
+        img {
+            height: 5rem;
+        }
+        @media screen and (max-width: 250px) {
+            .product {
+                display: flex;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="product">
+        <img src="product-placeholder.png" alt="product-placeholder">
+        <p>Product 1</p>
+    </div>
+    <div class="product">
+        <img src="product-placeholder.png" alt="product-placeholder">
+        <p>Product 2</p>
+    </div>
+    <div class="product">
+        <img src="product-placeholder.png" alt="product-placeholder">
+        <p>Product 3</p>
+    </div>
+    <div class="product">
+        <img src="product-placeholder.png" alt="product-placeholder">
+        <p>Product 4</p>
+    </div>
+    <div class="product">
+        <img src="product-placeholder.png" alt="product-placeholder">
+        <p>Product 5</p>
+    </div>
+    <div class="product">
+        <img src="product-placeholder.png" alt="product-placeholder">
+        <p>Product 6</p>
+    </div>
+    </div>
+    
+</body>
+</html>
