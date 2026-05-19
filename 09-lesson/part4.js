@@ -11,3 +11,4 @@ function createProduct(id, name, price) {
 
 const myProduct = createProduct(101, "Wireless Mouse", 25);
 console.log(myProduct.getSummary());
+//עובד
