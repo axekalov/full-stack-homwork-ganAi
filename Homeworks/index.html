@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="dummy.js" id="first-script"></script>
+  <title>Homework DOM</title>
+</head>
+<body>
+
+  <h1 id="title">JavaScript is awesome<span style="display:none;"> — hidden text</span></h1>
+  <h2 id="subtitle"></h2>
+
+  <ul>
+    <li class="item">HTML</li>
+    <li class="item">CSS</li>
+    <li class="item">JavaScript</li>
+    <li class="item">React</li>
+  </ul>
+
+  <form>
+    <div>
+      <label for="username">Username</label>
+      <input type="text" id="username">
+    </div>
+    <input type="button" value="Submit" id="submit-btn">
+  </form>
+
+  <script>
+    // --- Part 1 — 
+    document.title = "david axs"; 
+
+    const firstScript = document.head.getElementsByTagName('script')[0];
+    console.dir(firstScript.src || firstScript.tagName);
+
+    function introduce(greeting, name) {
+      console.log(`${greeting}, ${name}!`);
+    }
+    introduce("Hello", "Student");
+
+
+    // --- Part 2 —  
+    const title = document.getElementById('title');
+    console.dir(title);
+
+    const subtitle = document.getElementById('subtitle');
+    
+    subtitle.innerText = title.innerText;
+    // Comment: The hidden span text does NOT appear because innerText only reads visually rendered text.
+
+    subtitle.innerHTML = title.innerHTML;
+    // Comment: Now the hidden text is copied because innerHTML copies the raw HTML tags ignoring CSS visibility.
+
+    subtitle.style.backgroundColor = "lightblue";
+    subtitle.style.borderLeft = "4px solid orange";
+
+
+    // --- Part 3 — 
+    const items = document.getElementsByClassName('item');
+    console.log(items); 
+    // Comment: It is an HTMLCollection, not a standard Array. It contains 4 items.
+
+    for (let i = 0; i < items.length; i++) {
+      items[i].style.color = "darkblue";
+      if (i === 1) {
+        items[i].style.border = "2px solid gray";
+      }
+    }
+
+    items[items.length - 1].innerHTML = '<a href="https://react.dev" target="_blank">React Docs</a>';
+
+    const listItems = document.getElementsByTagName('li');
+    for (const li of listItems) {
+      li.style.backgroundColor = "lightyellow";
+    }
+
+
+    // --- Part 4 — Event Object & addEventListener ---
+    function handleClick() {
+      console.log("Button was clicked!");
+      const usernameInput = document.getElementById('username');
+      console.log(`Hello, ${usernameInput.value}!`);
+    }
+
+    const submitBtn = document.getElementById('submit-btn');
+    
+    submitBtn.addEventListener('mouseenter', handleClick);
+    // Comment: "click" requires a physical mouse press and release. "mouseenter" triggers instantly when hovering.
+
+    submitBtn.addEventListener('mouseleave', function() {
+      submitBtn.style.backgroundColor = "coral";
+    });
+
+  </script>
+</body>
+</html>
