@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fireworks Canvas</title>
+    <style>
+       body{
+          margin: 0
+ } 
+ #canvas{
+    width: 100vw; 
+    height: 100vh;
+    background-color: #111; 
+            position: relative; 
+            overflow: hidden;
+ }
+ .particle {
+    position: absolute;           
+    width: 8px;
+    height: 8px;
+    background-color: gold; 
+    border-radius: 50%;  
+    pointer-events: none;   
+        transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+.spark {
+    position: absolute;
+    width: 5px; 
+    height: 5px;
+    background-color: white; 
+    border-radius: 50%; 
+    pointer-events: none;
+    
+    transition: opacity 0.6s ease-out; 
+}
+    </style>
+
+    
+</head>
+<body>
+  
+    <div id="canvas"></div>
+        <script>
+      const canvas = document.getElementById("canvas");
+
+
+canvas.addEventListener("click", function(e) {
+    
+    for (let i = 0; i < 20; i++) {
+       
+        const dot = document.createElement("div");
+        
+        dot.classList.add("particle");
+        
+        dot.style.left = e.offsetX + "px";
+        dot.style.top  = e.offsetY + "px";
+        
+        canvas.appendChild(dot);
+
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = 40 + Math.random() * 80;
+        const dx = Math.cos(angle) * distance;
+        const dy = Math.sin(angle) * distance;
+
+        setTimeout(() => {
+            dot.style.transform = `translate(${dx}px, ${dy}px)`;
+            dot.style.opacity = "0"; 
+        }, 10);
+
+        setTimeout(() => dot.remove(), 700);
+    }
+});
+canvas.addEventListener("mousemove", function(e) {
+    
+    const spark = document.createElement("div");
+    
+    spark.classList.add("spark");
+    
+    spark.style.left = e.offsetX + "px";
+    spark.style.top  = e.offsetY + "px";
+    
+    canvas.appendChild(spark);
+
+    setTimeout(() => { 
+        spark.style.opacity = "0"; 
+    }, 50);
+    
+    setTimeout(() => spark.remove(), 650);
+});
+document.addEventListener("keydown", function(e) {
+    
+    if (e.key === "Escape") {
+        
+        canvas.innerHTML = "";
+    }
+});
+    </script>
+    
+</body>
+</html>
