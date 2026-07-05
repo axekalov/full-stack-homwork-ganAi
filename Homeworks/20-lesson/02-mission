@@ -1,0 +1,3 @@
+1.POST /vault with body { "code": "111" }  Console logs: Opening the vault...  Client receives: {"secret": "The gold is in the basement"}  
+2.Console logs: (כלום לא יודפס לקונסול).
+Client receives: Access Denied
