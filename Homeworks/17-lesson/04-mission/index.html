@@ -1,33 +1,14 @@
-/**
- *
- *
- * קובץ client.js שמקשיב ללחיצת כפתור, שולח בקשת POST לשרת עם נתוני העיר,
- * ומציג את התשובה על המסך תוך טיפול בשגיאות ב-try/catch.
- */
-
-document.getElementById('weather-btn').addEventListener('click', async (e) => {
-  // 1. עצירת ריענון העמוד (Prevent default)
-  e.preventDefault();
-
-  try {
-    // 2. קריאת הערך מתיבת הטקסט
-    const cityValue = document.getElementById('city-input').value;
-
-    // 3. שליחת POST לשרת עם הערך בתור JSON
-    const response = await fetch('http://localhost:3000/weather', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ city: cityValue })
-    });
-
-    // 4. המתנה לתשובת ה-JSON והצגתה על המסך כטקסט
-    const data = await response.json();
-    document.getElementById('weather-result').textContent = JSON.stringify(data);
-
-  } catch (error) {
-    // 5. עטיפה ב-try/catch והדפסת שגיאות לקונסולה
-    console.error('Error fetching weather:', error);
-  }
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 4 - Weather</title>
+</head>
+<body>
+  <input type="text" id="city-input" placeholder="Enter a city" />
+  <button id="weather-btn">Get Weather</button>
+  <div id="weather-result"></div>
+  
+  <script src="client.js"></script>
+</body>
+</html>

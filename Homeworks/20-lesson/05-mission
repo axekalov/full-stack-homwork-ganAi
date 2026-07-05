@@ -1,0 +1,9 @@
+// {
+//   "trail": "start-middle",
+//   "count": 2
+// }
+
+
+// כן, התשובה תשתנה. כאשר stepTwo רץ ראשון, הערך של res.locals.trail אינו מוגדר עדיין (undefined)
+// , כך שיתווסף אליו הטקסט ויצא "undefined-middle". לאחר מכן יעבוד המידלוור stepOne ופשוט ידרוס אותו וישנה את הערך ל- "start"
+// . לכן, הלקוח היה מקבל בסוף: {"trail": "start", "count": 2}.  
